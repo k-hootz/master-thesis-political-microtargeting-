@@ -1,0 +1,7 @@
+/outputs/
+/figures/
+/downloads/
+*.log
+.ipynb_checkpoints/
+.env
+.DS_Store
