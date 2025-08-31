@@ -11,16 +11,18 @@ The thesis concludes that existing regulation is insufficient, and that democrac
 ## Folder structure
 ```
 thesis-graphs/
-├─ notebook/                # notebooks
-├─ data/                    # input CSVs (committed)
-├─ outputs/                 # exports (gitignored)
-├─ figures/                 # saved images (gitignored)
+├─ notebook/
+│  └─ meta_ad_library_research_clean.ipynb  # main notebook
+├─ outputs/      # created automatically when you run the notebook (not in repo)
 ├─ requirements.txt
 └─ README.md
 ```
+- notebook/ → contains the Jupyter Notebook with all analysis and plots
+- outputs/ → created automatically when the notebook runs; contains all exported CSVs and figures (you can open CSVs in Excel)
 
-## Quickstart
+## Setup (optional for advanced users)
 
+If you want to run the notebook in a Python environment yourself:
 Using **pip**:
 ```bash
 python -m venv .venv
@@ -37,27 +39,45 @@ pip install -r requirements.txt
 
 ## Data
 
-All data used for the analysis is publicly available.
+All data used for the analysis is publicly available:
 
-Data on political ads on Facebook and Instagram is available via the Meta Ad Library: https://www.facebook.com/ads/library/
+Meta Ad Library (Facebook/Instagram ads):
+https://www.facebook.com/ads/library/
 
-Data on voters results in the 2025 German federal election is available via : https://bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse.html
+Official election results (2025 German federal election):
+https://bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse.html
 
-- `data/meta-ad-library.csv` — exported from Meta Ad Library.
-- `data/election-results.csv` — official election results CSV (contains a few metadata lines at the top which the notebook handles).
+# How to prepare
+Download the two CSV files from the links above.
+meta_ad_library.csv
+election_results.csv
 
-These two sample files are included here so the notebook runs out of the box.
+Save them anywhere on your computer (e.g. Downloads folder).
+
+Open the notebook and paste the full paths into the two boxes at the top.
+
+Example:
+META_ADS_PATH = r"C:\Users\Name\Downloads\meta_ad_library.csv"
+ELECTIONS_PATH = r"/Users/name/Downloads/election_results.csv"
 
 ## Run the notebook
 1. Launch Jupyter:
-   ```bash
-   python -m jupyter lab
-   ```
-2. Open `notebook/9a2d2d76-1a07-4fd7-8280-fd12d1e718ff_github_ready_clean.ipynb`.
-3. Run all cells.
+   jupyter lab
+   (or jupyter notebook)
+
+2. Open:
+   notebook/meta_ad_library_research_manual_paths_clean_with_note.ipynb
+
+3. In the very first cell, paste the full paths to the two downloaded CSV files.
+
+4. Run all cells (Kernel → Restart & Run All).
+
+5. You’ll see:
+   Figures and statistics directly in the notebook
+   CSVs and plots saved under the outputs/ folder (next to the notebook).
 
 ## Reproducibility notes
-- The notebook uses **relative paths** via `DATA_DIR`, `OUT_DIR`, and `FIG_DIR`.
-- Outputs (CSVs, figures) are written to `outputs/` or `figures/` and are ignored by git.
 - No desktop-specific paths remain.
+- The notebook works entirely with the two input files provided by the user.
+- Outputs are automatically placed into the outputs/ folder for clarity.
 
