@@ -1,4 +1,4 @@
-## master-thesis-political-microtargeting-
+## master-thesis-political-microtargeting
 In this repository I am going to publish the code that I have used to get the figures for my master thesis. 
 
 ## Abstract
@@ -57,22 +57,27 @@ Save them anywhere on your computer (e.g. Downloads folder).
 Open the notebook and paste the full paths into the two boxes at the top.
 
 Example:
+
 META_ADS_PATH = r"C:\Users\Name\Downloads\meta_ad_library.csv"
+
 ELECTIONS_PATH = r"/Users/name/Downloads/election_results.csv"
 
 ## Run the notebook
 1. Launch Jupyter:
+
    jupyter lab
    (or jupyter notebook)
 
-2. Open:
-   notebook/meta_ad_library_research_manual_paths_clean_with_note.ipynb
+3. Open:
 
-3. In the very first cell, paste the full paths to the two downloaded CSV files.
+   notebook/meta_ad_library_research_clean.ipynb
 
-4. Run all cells (Kernel → Restart & Run All).
+5. In the very first cell, paste the full paths to the two downloaded CSV files.
 
-5. You’ll see:
+6. Run all cells (Kernel → Restart & Run All).
+
+7. You’ll see:
+
    Figures and statistics directly in the notebook
    CSVs and plots saved under the outputs/ folder (next to the notebook).
 
